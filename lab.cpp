@@ -14,7 +14,7 @@ struct Node{
 
 int treeHeight(Node *root){
     if (root == nullptr) return -1;
-    if ( root -> left = nullptr && root -> right = nullptr) return 0;
+    if ( root -> left == nullptr && root -> right = nullptr) return 0;
     return 1 + max(treeHeight(root-left), treeHeight(root-> right));
 }
 

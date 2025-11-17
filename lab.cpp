@@ -12,13 +12,30 @@ struct Node{
 };
 
 
+int treeHeight(Node *root){
+    if (root == nullptr) return -1;
+    if ( root -> left = nullptr && root -> right = nullptr) return 0;
+    return 1 + max(treeHeight(root-left), treeHeight(root-> right));
+}
+
+
 void printLevel(Node* root, int level){
     if (root == nullptr) return;
-    if (level == 0) cout << root -> data << " ";
+    if (level == 0){
+        cout << root -> data << " "; saved.push_back(root -> data);
+    }
     else{
         printLevel (root -> left, level -1);
         printLevel (root -> right, level -1);
     }
+}
+
+
+void printLevelOrder(Node *root, vector <int> &saved){
+    int h = getHeight(root);
+    for (int i =0 ; i<=h; i++{
+        printLevel(root, i, saved); cout << endl;
+    })
 }
 
 
@@ -59,12 +76,6 @@ int main()
 {
     vector<int> tree_values = {10,15,20,3,5,30,17};
     Node *root = constructCBT(tree_values);
-    if (root == nullptr) cout << "null";
-    printLevel (root, 0); cout << endl;
-    printLevel (root, 1); cout << endl;
-    printLevel (root, 2); cout << endl;
-    printLevel (root, 3); cout << endl;
-
 
     vector<int> tree_values2 = {4,2,1,3,6,5,7,8};
     root = nullptr;
